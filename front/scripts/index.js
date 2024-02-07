@@ -1,14 +1,82 @@
 console.log(tempData);
 
+console.log(tempData);
 
-document.addEventListener('DOMContentLoaded', function () {
+const principalContent = document.getElementById("moviesConten");
+
+function addMovie({
+  title,
+  year,
+  director,
+  duration,
+  genre = [],
+  rate,
+  poster,
+}) {
+  const moviecart = document.createElement("div");
+  const infomovie = document.createElement("div");
+  const imgcart = document.createElement("div");
+  const mtitle = document.createElement("h1");
+  const myear = document.createElement("p");
+  const mimagenpeli = document.createElement("img");
+  const mdirector = document.createElement("p");
+  const mduration = document.createElement("p");
+  const mgenre = document.createElement("p");
+  const mrate = document.createElement("p");
+
+  mtitle.textContent = title;
+  myear.textContent = `Año: ${year}`;
+  mdirector.innerHTML = `Director ${director}`;
+  mimagenpeli.src = poster;
+  mduration.textContent = `Duracion: ${duration}`;
+  mgenre.textContent = `Genero: ${genre.join(", ")}`;
+  mrate.textContent = `valoracion: ${rate} :star:`;
+  moviecart.className = "moviescarts";
+  imgcart.className = "imgcontent";
+  infomovie.className = "infocontent";
+
+  infomovie.appendChild(myear);
+  infomovie.appendChild(mdirector);
+  infomovie.appendChild(mduration);
+  infomovie.appendChild(mgenre);
+  infomovie.appendChild(mrate);
+
+  imgcart.appendChild(mimagenpeli);
+
+  moviecart.appendChild(mtitle);
+  moviecart.appendChild(imgcart);
+  moviecart.appendChild(infomovie);
+
+  return moviecart;
+}
+
+/*const arraymovies = tempData.map((pelicula) => addMovie(pelicula));*/
+
+function renderMovies() {
+  $.get("https://students-api.2.us-1.fl0.io/movies", (movies, state) => {
+    const arraymovies = movies.map((pelicula) => addMovie(pelicula));
+    arraymovies.forEach((element) => {
+      principalContent.appendChild(element);
+    });
+    console.log(state);
+    console.log(state);
+  });
+}
+
+/*function renderMovies() {
+  const arraymovies = tempData.map((pelicula) => addMovie(pelicula));
+  arraymovies.forEach((element) => {
+    principalContent.appendChild(element);
+  });
+}*/
+
+window.addEventListener("DOMContentLoaded", renderMovies);
+
+/* document.addEventListener('DOMContentLoaded', function () {
     const contenedorPeliculas = document.getElementById("peliculasBox");
 
     tempData.forEach((pelicula) => {
         const elementosPelicula = document.createElement("div");
-        elementosPelicula.className = "elementoPelicula"
-        elementosPelicula.style.backgroundRepeat = `no-repeat`
-        elementosPelicula.style.backgroundImage = `url(${pelicula.poster})`;
         elementosPelicula.innerHTML = `
             <h2>${pelicula.title}</h2>
             <p>Year: ${pelicula.year}</p>
@@ -16,57 +84,21 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Duration: ${pelicula.duration}</p>
             <p>Genre: ${pelicula.genre}</p>
             <p>Rate: ${pelicula.rate}</p>
-            
+            <img src="${pelicula.poster}" alt="${pelicula.title}"></img>            
         `;
         contenedorPeliculas.appendChild(elementosPelicula);
     });
-});
-
-
-/* <img src="${pelicula.poster}" alt="${pelicula.title}"></img> */
-
-
-/* document.addEventListener('DOMContentLoaded', function () {
-    const boxPeliculas = document.getElementById("peliculasBox");
-
-    // Importa los datos desde tempData.js
-    
-
-    // Mostrar películas al cargar la página
-    mostrarPeliculas(peliculas);
-
-    // Función para mostrar las películas en el DOM
-    function mostrarPeliculas(peliculas) {
-        boxPeliculas.innerHTML = "";
-
-        peliculas.forEach((pelicula) => {
-            // El código sigue siendo el mismo
-            const divPelicula = document.createElement("div");
-            divPelicula.classList.add("pelicula");
-
-            const imgElement = document.createElement("img");
-            imgElement.src = pelicula.imgUrl;
-            divPelicula.appendChild(imgElement);
-
-            const titleElement = document.createElement("h3");
-            titleElement.textContent = pelicula.title;
-            divPelicula.appendChild(titleElement);
-
-            const detailsElement = document.createElement("div");
-            detailsElement.classList.add("detalles");
-            
-            detailsElement.innerHTML = `
-                <p><strong>Año:</strong> ${pelicula.year}</p>
-                <p><strong>Director:</strong> ${pelicula.director}</p>
-                <p><strong>Duración:</strong> ${pelicula.duration}</p>
-                <p><strong>Género:</strong> ${pelicula.genre.join(", ")}</p>
-                <p><strong>Puntuación:</strong> ${pelicula.rate}</p>
-            `;
-
-            divPelicula.appendChild(detailsElement);
-
-            boxPeliculas.appendChild(divPelicula);
-        });
-    }
 }); */
+
+
+
+
+
+
+
+
+
+
+
+
 

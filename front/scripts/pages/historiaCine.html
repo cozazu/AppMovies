@@ -3,38 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/reset.css" />
-    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <title>Document</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   </head>
   <body>
-    <header>
-      <h1>Proyecto de M2</h1>
+    <header class="secciones">
+      <h1>MOVIES</h1>
       <nav>
         <ul>
-          <li>
-            <a href="./historia.html">Histia del cine</a>
+          <li button type="button" class="btn btn-secondary">
+            <a href="./scripts/pages/miProyecto.html">Historia del cine</a>
           </li>
-          <li><a href="#mihistoria">Mi historia con el cine</a></li>
-          <li><a href="../index.html">Mis peliculas favoritas</a></li>
+          <li button type="button" class="btn btn-secondary"><a href="./miProyecto.html">Mi historia con el cine</a></li>
+          <li button type="button" class="btn btn-secondary"><a href="../../index.html">Mis peliculas favoritas</a></li>          
         </ul>
       </nav>
     </header>
     <main>
-      <section class="seciones" id="mihistoria">
         <h1>Mi historia del cine</h1>
-        <p class="parrafos">
-          
-      </section>
-      <section class="seciones">
-        <h2>linea de tiempo del cine</h2>
-        <div>
-          <img
-            id="imageTiempi"
-            src="../imagenes footer/LineaDeTiempoCine.jpg"
-            alt="" />
+        <p class="parrafos"></p>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <img height="330px" width="330px" src="https://img.freepik.com/vector-gratis/rollo-pelicula_1017-6355.jpg?w=740&t=st=1707436152~exp=1707436752~hmac=395d22c807610ef1e9389922965dc65b614d5dbbb6f505879e88bbbd85fd48b8" alt="Img de cine">
+            </div>
+            <div class="col">
+              <img height="330px" width="330px" src="https://img.freepik.com/vector-gratis/patrones-fisuras-elementos-cine_225004-1154.jpg?w=740&t=st=1707453453~exp=1707454053~hmac=78af39d2a34286627b43bb8fb42a9ead365617ade98526c877c78f5a80428aab" alt="Img de cine 2">
+            </div>
+          </div>
         </div>
-      </section>
     </main>
     <footer>
         <article>
@@ -45,5 +46,9 @@
             <a href="https://wa.me/573157958464" target="_blank"><img src="./styles/images/whatsApp.jpeg" alt="icono wathsapp"></a>
         </article>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="./scripts/tempData.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

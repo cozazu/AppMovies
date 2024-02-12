@@ -101,26 +101,27 @@ header ul a {
     color: rgb(255, 255, 255);
 }
 
-.parrafos {
-    text-align: center;
+.parrafo {
+    text-align: justify; 
+    text-justify: inter-word;
 }
   
-footer {
+#footer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     background-color: white;
     padding: 0.5rem;
 }
 
-footer article {
-    width: 50vw;
+#footer article {
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-footer img {
+#footer img {
     height: 2.5rem;
     width: 2.5rem;
 }
@@ -129,7 +130,15 @@ footer img {
     text-align: center;
 }
 
-#imageTiempi {
-    width: 100%;
-    /* aspect-ratio: ; */
+.webNetflix img {
+    overflow: hidden; 
+    float: left; 
+    margin-right: 10px; 
 }
+
+.webAmazon img {
+    overflow: hidden; 
+    float: right;
+    margin-left: 10px; 
+}
+    

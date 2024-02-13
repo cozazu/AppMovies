@@ -1,5 +1,3 @@
-const principalContent = document.getElementById("moviesConten");
-
 function addMovie({
     title,
     year,
@@ -46,4 +44,4 @@ function addMovie({
     return moviecart;
 };
 
-module.exports = addMovie();
+module.exports = addMovie;

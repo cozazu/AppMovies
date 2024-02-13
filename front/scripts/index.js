@@ -1,9 +1,36 @@
-const { principalContent, addMovie } = require("./renderCards.js");
-
+const addMovie = require("./renderCards.js");
+const principalContent = document.getElementById("moviesConten");       
 const url = "https://students-api.2.us-1.fl0.io/movies"
+const axios = require("axios");
 
-function renderMovies() {
-  $.get(url, (movies, status) => {
+const getMovies = async () => {
+  try {
+    const { data } = await axios.get(url);
+    const arrayMovies = data.map(movie => addMovie(movie));
+    arrayMovies.forEach(element => {
+      principalContent.appendChild(element);
+    });      
+  }
+  catch (error) {
+    alert(error.message);
+  }
+}
+getMovies();
+  
+
+  /* console.log("version 1.0.4 - promesas con async/await"); */
+
+
+  /* axios
+    .getAdapter(url) 
+    retorna => instancia de promesa
+    .then(response => 
+      responde.data.map(movie => cardGenerator(movie))
+      ) responde = {..., data: [ {1}. {2}, {3} ] }
+    .catch(error => alert(error.message)); 
+    error = {..., message: Aquí el error} */
+
+  /* $.get(url, (movies, status) => {
     if (status === "success") {
       const arraymovies = movies.map((pelicula) => addMovie(pelicula));
       arraymovies.forEach((element) => {
@@ -16,10 +43,10 @@ function renderMovies() {
       errorElement.innerText = `Error en la petición AJAX a ${url}`
       principalContent.appendChild(errorElement);
     }
-  });
-}
+  }); */
 
-renderMovies();
+
+/* renderMovies(); */
 
 
 

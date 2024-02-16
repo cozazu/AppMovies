@@ -1,10 +1,19 @@
-const moviesService = require("../services/moviesService.js");
+const { getMovies } = require("../services/moviesService.js")
 
-function getMovies(req, res) {
-    const movies = moviesService.getMovies();
-    res.json(movies);
-        /* .status(200)
-        .send("próximamente estarán disponibles los datos de películas.") */
+module.exports = {
+    getMovies: async (req, res) => {
+        try {
+            const movies = await getMovies();
+            res
+                .status(200)
+                .json(movies)                
+        } catch (error) {
+            res
+                .status(500)
+                .json({
+                    message: "Error al obtener los datos",
+                    error: error.message
+                })
+        }        
+    }
 };
-
-module.exports = { getMovies };

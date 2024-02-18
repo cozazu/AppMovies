@@ -10,6 +10,9 @@ const cors = require("cors");
     console.log(`${req.method} a la ruta ${req.url}`);
     next();
 }); */
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end(); // Retorna una respuesta vacía (status code 204)
+});
 
 // Middleware CORS para permitir solicitudes desde cualquier origen
 app.use(cors());
@@ -22,6 +25,8 @@ app.use(express.json());
 
 /* app.use("/", homeRouter); */
 app.use("/movies", movieRouter);
+
+
 
 /* app.get("/demo", (req, res) => res.send("DEMO")); */
 

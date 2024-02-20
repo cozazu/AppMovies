@@ -1,5 +1,5 @@
 const axios = require("axios");
-const urlMovies = "https://students-api.2.us-1.fl0.io/movies";
+const urlMovies = "https://henry-movies-dev-sgtm.3.us-1.fl0.io/";
 
 class estructuraMovie {
     constructor(id, title, year, director, duration, genre, rate, poster, description) {

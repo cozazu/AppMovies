@@ -1,6 +1,6 @@
 const addMovie = require("./renderCards.js");
 const principalContent = document.getElementById("moviesConten");       
-const url = "https://students-api.2.us-1.fl0.io/movies"
+const url = "http://localhost:3000/movies"
 const axios = require("axios");
 
 const getMovies = async () => {

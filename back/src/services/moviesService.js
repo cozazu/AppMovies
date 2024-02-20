@@ -1,7 +1,7 @@
-const axios = require("axios");
-const urlMovies = "https://henry-movies-dev-sgtm.3.us-1.fl0.io/";
+/* const axios = require("axios");
+const urlMovies = "https://henry-movies-dev-sgtm.3.us-1.fl0.io/"; */
 
-class estructuraMovie {
+/* class estructuraMovie {
     constructor(id, title, year, director, duration, genre, rate, poster, description) {
         if (!title && !poster && !director) {
             throw new Error("Title, poster y director son requeridos!!!");
@@ -16,9 +16,9 @@ class estructuraMovie {
         this.poster = poster,
         this.description = description
     };
-};
+}; */
 
-const getMovies = async () => {
+/* const getMovies = async () => {
     try {
         const movies = await axios.get(urlMovies);
         console.log("Estado de la respuesta de la API:", movies.status);
@@ -40,6 +40,12 @@ const getMovies = async () => {
         console.error("Error al obtener peliculas:", error);
         throw error;
     }
-};
+}; */
+const Movie = require("../models/Movie")
 
-module.exports = { getMovies };
+module.exports = { 
+    getMovies: async () => {
+        const allMovies = await Movie.find();
+        return allMovies;
+    }
+};

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Película</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="secciones">
+        <h1>MOVIES</h1>
+        <nav>
+            <ul>
+                <li button type="button" class="btn btn-secondary">
+                    <a href="./historiaCine.html">Historia del cine</a>
+                </li>
+                <li button type="button" class="btn btn-secondary"><a href="./websRecomendadas.html">Webs Recomendadas</a></li>
+                <li button type="button" class="btn btn-secondary"><a href="./index.html">Mis peliculas favoritas</a></li>
+                <li button type="button" class="btn btn-secondary"><a href="#movieForm">Crear Película</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="secciones">            
+            <h1>Crear Nueva Película</h1>
+            <form id="movieForm"></form>    
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="title"
+                        name="name"
+                        placeholder="Ingresar Title"
+                        autocomplete="off"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year:</label>
+                    <input 
+                        type="number"
+                        class="form-control"
+                        id="year"
+                        name="year"
+                        placeholder="Ingresar year"
+                        autocomplete="off"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="director" class="form-label">Director:</label>
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="director"
+                        name="director"
+                        placeholder="Ingresar director"
+                        autocomplete="off"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Duration:</label>
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="duration"
+                        name="duration"
+                        placeholder="Ingresar duration"
+                        autocomplete="off"
+                        required
+                    />                
+                </div>
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre:</label>
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="genre"
+                        name="genre"
+                        placeholder="Ingresar genre"
+                        autocomplete="off"
+                        required
+                    />                
+                </div>
+                <div class="mb-3">
+                    <label for="rate" class="form-label">Rate:</label>
+                    <input 
+                        type="number"
+                        class="form-control"
+                        step="any"
+                        id="rate"
+                        name="rate"
+                        placeholder="Ingresar rate"
+                        autocomplete="off"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="poster" class="form-label">Poster:</label>
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="poster"
+                        name="poster"
+                        placeholder="Ingresar url de poster"
+                        autocomplete="off"
+                        required
+                    />
+                    <br>
+                    <br>
+                    <button id="crear" class="btn btn-light" type="button" value="Crear">Crear</button>
+                    <button id="limpiar" class="btn btn-light" type="button" value="limpiar">Limpiar</button>
+                </div>
+            </form>    
+        </section>
+    </main>
+
+    <footer>
+        <article id="footer">
+            <a href="mailto:aranzazuarcila@gmail.com" target="_blank"><img  src="./styles/images/email.jpeg" alt="icono email"></a>
+            <a href="https://www.instagram.com/aranzazujul/" target="_blank"><img src="./styles/images/instagram.jpeg" alt="icono instagram"></a>
+            <a href="https://www.linkedin.com/in/juli%C3%A1n-aranzazu-95837a207/" target="_blank"><img src="./styles/images/linkedin.jpeg" alt="icono linkeding"></a>
+            <a href="tel:+573157958464"><img src="./styles/images/llamada.jpeg" alt="icono llamada" target="_blank"></a>
+            <a href="https://wa.me/573157958464" target="_blank"><img src="./styles/images/whatsApp.jpeg" alt="icono wathsapp"></a>
+        </article>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="./public/bundle.js"></script>
+</body>
+</html>

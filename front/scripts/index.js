@@ -1,5 +1,6 @@
+const { createMovie, clearMovie } = require("./createMovie.js");
 const addMovie = require("./renderCards.js");
-const principalContent = document.getElementById("moviesConten");       
+const principalContent = document.getElementById("container-movies");       
 const url = "http://localhost:3000/movies"
 const axios = require("axios");
 
@@ -8,14 +9,24 @@ const getMovies = async () => {
     const { data } = await axios.get(url);
     const arrayMovies = data.map(movie => addMovie(movie));
     arrayMovies.forEach(element => {
-      principalContent.appendChild(element);
+      principalContent?.appendChild(element);
     });      
   }
   catch (error) {
     alert(error.message);
   }
-}
-getMovies();
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  getMovies();
+  const submit = document.getElementById("crear");
+  submit?.addEventListener("click", createMovie);
+  console.log("Version 1.2.0 - Formulario para crear nueva película");
+  const limpiar = document.getElementById("limpiar");
+  limpiar?.addEventListener("click", clearMovie);
+});
+
+
   
 
   /* console.log("version 1.0.4 - promesas con async/await"); */
@@ -50,25 +61,6 @@ getMovies();
 
 
 
-/* window.addEventListener("DOMContentLoaded", renderMovies); */
-
-/* document.addEventListener('DOMContentLoaded', function () {
-    const contenedorPeliculas = document.getElementById("peliculasBox");
-
-    tempData.forEach((pelicula) => {
-        const elementosPelicula = document.createElement("div");
-        elementosPelicula.innerHTML = `
-            <h2>${pelicula.title}</h2>
-            <p>Year: ${pelicula.year}</p>
-            <p>Director: ${pelicula.director}</p>
-            <p>Duration: ${pelicula.duration}</p>
-            <p>Genre: ${pelicula.genre}</p>
-            <p>Rate: ${pelicula.rate}</p>
-            <img src="${pelicula.poster}" alt="${pelicula.title}"></img>            
-        `;
-        contenedorPeliculas.appendChild(elementosPelicula);
-    });
-}); */
 
 
 
